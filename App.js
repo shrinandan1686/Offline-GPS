@@ -74,9 +74,12 @@ export default function App() {
           accuracy={coords?.accuracy}
         />
 
-        <Text style={styles.footer}>
-          Last Update: {timestamp ? new Date(timestamp).toLocaleTimeString() : '--:--:--'}
-        </Text>
+        <View style={styles.footerContainer}>
+          <Text style={styles.footer}>
+            Last Update: {timestamp ? new Date(timestamp).toLocaleTimeString() : '--:--:--'}
+          </Text>
+          <Text style={styles.signature}>Made with ❤️ by Shri</Text>
+        </View>
       </View>
     </SafeAreaView>
   );
@@ -154,10 +157,19 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
   },
-  footer: {
+  footerContainer: {
     marginTop: 'auto',
     marginBottom: 20,
+    alignItems: 'center',
+  },
+  footer: {
     color: '#333',
     fontSize: 12,
+    marginBottom: 5,
+  },
+  signature: {
+    color: '#555',
+    fontSize: 12,
+    fontWeight: 'bold',
   },
 });
